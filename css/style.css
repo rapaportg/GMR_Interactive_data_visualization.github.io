@@ -1,6 +1,6 @@
 .center{
     text-align: center;
-    
+    overflow: hidden;
 }
 
 #colorwhite{
@@ -11,6 +11,10 @@
     color: rgb(255, 230, 0);
 }
 
+#colordarkgrey {
+    background-color: rgb(49, 49, 49);
+}
+
 .rounded{
     border-radius: 25px;
     padding: 10px;
@@ -19,7 +23,7 @@
     margin-right: 2em;
     margin-left: 2em;
     width: auto;
-    height: 150px;  
+    /* height: 150px;   */
  }
 
 .header{
@@ -46,4 +50,12 @@
 
 body {
     background: rgb(65, 65, 65);
+}
+
+.center {
+    align-content: center;
+}
+
+.underline {
+    text-decoration: underline;
 }

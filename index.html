@@ -7,19 +7,130 @@
     <!-- The following line references an external css file -->
     <!-- It defines style rules for your page, and elements in your page -->
     <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <style>
 </style>
-<body>
+<body id='colordarkgrey'>
     <div class='rounded'>
         <h1 class="center" id="colorwhite">Gabriel Rapaport</h1>
         <H2 class="center" id="colorgold">Engineering Interactive Data Visualization Portfolio</h2>
     </div>
-   <div class="rounded" id="bglightorange">
-       <p>Project 1</p>
-   </div>
+    <div class="rounded" id="bglightorange">
+    <br>
+    <div class='center'>
+        <h2 ><strong>Project 1 : Bad Air</strong></h2>
+    </div>
+    <br>
+    <br>
+    <h4><strong>Motivation for this application:</strong></h4>
+    <p>
+        This project was created to analyze the air quality data of 3000 counties in the US from 1980 to 2021. 
+        With this data, we can see the change in air quality over time as well as comparing the air quailty of different
+        counties.
+    </p>
+    <p>
+        The data used in the visualization comes from EPA and can be found at the following link:
+         <a href='https://aqs.epa.gov/aqsweb/airdata/download_files.html#Annual'>EPA Data.</a>
+        This data contains two major groups of data. First, is the air quailty index data. This data consist of "Min AQI", "Median AQI", and "Max AQI". It also contains the number of days per year that the air quailty was healthy, unhealthy for sensitive groups, unhealthy, and hazardous. The other major group of data that it contains the number of days per year that a pollutant was the main pollutant. The pollutants that are recorded are CO, NO2, Ozone, SO2, PM2.5, and PM10.
+    </p>
+    <hr>
+    <h4>
+        <strong>UI Expained:</strong>
+    </h4>
+    <br>
+    
+    <div class='center'>
+        <img style="width:90%;height:500px;" src='./img/project1_vis1.png'>
+        <br></br>
+        <p><strong>Visualization 1</strong></p>
+        <p>
+            In this visualization, we are comparing the max, the median, and the 90th percentile air quailty index of two counties in the US. The interaction that a user can have with the visual is you can change the region selected for both side. When a user selects a new region, every chart on either the left or right side will update with the data from that region. Something that I would like to add in the future is a tooltip pop-up that would read out the exact data at the year the user is hovering over on both line charts. Another addition I would like to add is a year range selector. Instead of having to look at it from 1980 to 2021 i would like the user to be able to select different time ranged from within that to get a more granular view of the data. 
+        </p>
+    </div>
+    <hr>
+    <div class="center">
+        <img src="./img/project1_vis2.png" style="width:90%;height:500px;">
+        <br></br>
+        <p><strong>Visualization 2</strong></p>
+        <p>
+            In this visualization, we can see a multi-line chart where the x-axis shows us the year from 1980 to 2021 and the y-axis shows us a number between 0 and 366 that represents the number of days. Each line on the chart represents the number of days a pollutant was the main pollutant in that county per year. The only interaction that this visualization offers is the abilty to change the selected region at the top of the page. In the future, I would like to add a tooltip pop-up to show more detailed information at the selected year on the chart, add buttons to the legend that allow to the user to enable and disable which lines are shown, and the ability to select date ranges. Another thing I would like to add is a vertical line the shows what year is selected and have this line mirrored on both the left and right charts.  
+        
+        </p>
+    </div>
+    <hr>
+    <div class='center'>
+        <img src='./img/project1_vis3.png' style="width:90%;height:500px;">
+        <br></br>
+        <p><strong>Visualization 3</strong></p>
+        <p>
+            In this visualization, we can see a line chart that lets us see number of days per year that don't have any air quailty measurements in the selected region. An update I would like to make to this visualization, is to convert it to a pie chart to give the user a clearer idea of how well this county is measuring their air quality. As it stands now, I think it doesnt add much value to the data.
 
-   <div class="rounded" id="bglightblue">
+        </p>
+
+
+    </div>
+    <hr>
+    <div class='center'>
+        <img src='./img/project1_vis4.png' style="width:auto;height:500px;">
+        <br></br>
+        <p><strong>Visualization 4</strong></p>
+        <p>
+            In this visualization, we see a bar chart that shows the number of days in the selected year that the air quailty was good, unhealthy for sensitive group, unhealhy, and hazardous. There are two ways to interact with this visual, the user can either change the selected region using the dropdown at the top of the page or they can change the selected year using the slider under each chart. When using the slider, the bars on the chart will change to represent the data of the selected year.
+        </p>
+    </div>
+    <hr>
+    <div class='center'>
+        <img src='./img/project1_vis5.png' style="width:auto;height:500px;">
+        <br></br>
+        <p><strong>Visualization 5</strong></p>
+        <p>
+            In this visualization, we see a choropleth map that shows the median air quality index through a color gradient. There is no interactivity with this visual. Given more time, I would like to move this map to the top of the page and use it to select the regions that are being used for the rest of the visuals. While highlighting the two selected counties on the map. This would give the users a better idea of how the selected regions compare geographically. I would also like to add a slider to the map that will allow the user to update which year the map is representing. As it stands, it is fixed on the 1980s data.
+        </p>
+    </div>
+    <hr>    
+
+    <h4><strong>Findings</strong></h4>
+    <br></br>
+    <div class='center'>
+        <img src='./img/project1_finding1.png' style="width:90%;height:500px;">
+        <br></br>
+        <p><strong>Finding 1</strong></p>
+        <p>
+            Using visualization 4, the bar chart, setting both left and right sides to the same county and changing the year to 1980 on the left and to 2021 on the right. I can see that the air quailty in Hamilton county has improved significantly in the last 42 years. 
+        </p>
+    </div>
+    <hr>
+    <div class='center'>
+        <img src='./img/project1_finding2.png' style="width:90%;height:500px;">
+        <br></br>
+        <p><strong>Finding 2</strong></p>
+        <p>
+            Using visualization 2, the multi-line chart and setting the left chart to Hamilton county, Ohio and the right chart to Posey county, Indiana, you can see that in Hamilton county, there is a good mix of primary pollutants. While in Posey county, after 1997, on the only measured pollutant is Ozone. This discovery leads me to wondering what are the difference between these two counties.  
+        </p>
+    </div>
+    <hr>
+    <div class='center'>
+        <img src='./img/project1_vis5.png' style="width:auto;height:500px;">
+        <br></br>
+        <p><strong>Finding 3</strong></p>
+        <p>
+            Using Visualization 5, the choropleth map, you can see that in general, the worst air quailty in the US can be found in the south west region of the country. 
+        </p>
+    </div>
+    <hr>
+    <br>
+    <h4><strong>My Build Process</strong></h4>
+
+    <p>
+        This build started out as simply figuring out how d3 worked and just getting visualization from the data. Not much time was spent planning out how the code would be built and that did result in some shortcommings. The general structure of my code is each visualization is contained within its own function. Each function contains the data loading and pre-processing, as well as the creation of each visual using d3. From this, I learned that doing it this way is ineffient and that I should do all data loading and processing as a one time event seperate from the visual creation. On top of this, instead of creating a new svg element and appending it to the page, I create base svg elements that are permanently added to the page and simply update each one according the id given to them. I did this so that I could arrange my page in a way that I wanted. From this, I have learned that it is best to have only the parent of each svg defined then generate it using d3. Lastly, the way that I cleared each individal svg is very ineffient and lead to significantly greater debugging time. In hindsight, I should have used a general class and called <code>d3.selectAll('general_class').remove()</code> to clear each visual before updating. The only libraries used in this project were d3 for data visualization and bootstrap css for some basic page layout. 
+    </p>
+
+
+
+</div>
+
+    <div class="rounded" id="bglightblue">
        <p>Project 2</p>
     </div>
 
@@ -27,8 +138,5 @@
     <p>Project 3</p>
 </div>
 </body>
-    <!-- Load external JS files -->
-    <!-- This is where you will do most of the 'work' for your applications -->
-    <script src="js/main.js"></script>
-</body>
+
 </html>
