@@ -126,6 +126,13 @@
         This build started out as simply figuring out how d3 worked and just getting visualization from the data. Not much time was spent planning out how the code would be built and that did result in some shortcommings. The general structure of my code is each visualization is contained within its own function. Each function contains the data loading and pre-processing, as well as the creation of each visual using d3. From this, I learned that doing it this way is ineffient and that I should do all data loading and processing as a one time event seperate from the visual creation. On top of this, instead of creating a new svg element and appending it to the page, I create base svg elements that are permanently added to the page and simply update each one according the id given to them. I did this so that I could arrange my page in a way that I wanted. From this, I have learned that it is best to have only the parent of each svg defined then generate it using d3. Lastly, the way that I cleared each individal svg is very ineffient and lead to significantly greater debugging time. In hindsight, I should have used a general class and called <code>d3.selectAll('general_class').remove()</code> to clear each visual before updating. The only libraries used in this project were d3 for data visualization and bootstrap css for some basic page layout. 
     </p>
 
+    <hr>
+    <h4><strong>Demo</strong></h4>
+    <div class="center">
+    <video width="800px" height="500px" controls>
+        <source src='./img/vid/video2339499239.mp4' type="video/mp4">
+    </video>
+    </div>
 
 </div>
 
