@@ -137,12 +137,169 @@
 </div>
 
     <div class="rounded" id="bglightblue">
-       <p>Project 2</p>
+        <div class='center'>
+            <h2 ><strong>Project 2 : Herbarium</strong></h2>
+        </div>
+        <h4>How to View</h4>
+        <p>
+            The project’s source code is hosted on GitHub at <code>https://github.com/JakeTM9/VID_Project_2</code>  and deployed through GitHub Pages at https://jaketm9.github.io/VID_Project_2/. The project can also be run locally using Python3 with the command <code>python -m http.server 8000</code> where “8000” is whatever port the user chooses. The application is then accessed by navigating to http://localhost:8000/.
+        </p>
+        <hr>
+        <h4>Motivations</h3>
+        <p>
+            The motivation behind this project is to help someone to understand and investigate the various fungi in the University of Cincinnati’s herbarium collection. This is challenging to do just by looking at raw data, or by reading about each fungus one by one due to the large amount of fungi in this collection and the wide span of years and locations they have been collected from. This project allows users to view and compare all of the fungi at once in multiple views and data sets, or to focus on a certain time frame and just view the fungi collected during the selected period.
+        </p>
+        <hr>
+        <h4>Data</h4>
+        <p>
+            The data used in this project comes from the University of Cincinnati herbarium website, https://herbariumcinc.com/ .  Specifically, only the fungi specimen data was used. The fields focused on were mostly when and where the data was collected, as well as the classification fields. The specimens were collected over a span of 1859-2017, mostly from the United States and Europe but with a few specimens from all corners of the globe. For each specimen, the user can view who collected it, what fungi type it is, and its kingdom, phylum, and habitat.
+        </p> 
+        <hr>
+        <h3>Visualization Components</h3>    
+        
+        <div class="center">
+            <img style="width:90%;height:600px;" src='./img/project2_vis1.1.png'>
+            <h5>Figure 1: Map</h4> 
+            <p></p>
+            <img style="width:90%;height:90px;" src='./img/project2_vis1.3.png'>
+            <h5>Figure 2: Year Color Scale </h4>
+            <p></p>
+            <img style="width:90%;height:70px;" src='./img/project2_vis1.2.png'>
+            <h5>Figure 3: Days Color Scale</h4>
+            <p>At the top of the page is a map containing colored dots representing where each specimen was collected in the world. Above the map is a dropdown menu allowing the user to change how the dots are colored. There are three options for this: by year, by days into the year, and by phylum. This helps to group and see the quantity of specimens in relation to each other. Below the dropdown menu is the selected dot color type legend. For years and days into the year, this legend is shown as a color scale (Figures 2 and 3). For phylum, a classic color legend is utilized (Figure 1).The map also has three view options; ESRI, topographic, and stamen. ESRI is a standard map showing a satellite image view of the world. The topographic map shows the elevation of various areas. The stamen map shows hill shading and natural vegetation colors. When the mouse is placed over a specimen on the map, a tooltip will appear showing when it was collected, who it was recorded by, the kingdom, phylum, and habitat, and a link to the database entry containing the full information about the specimen (Figure 1).  </p>
+            <img style="width:90%;height:230px;" src='./img/project2_vis2.png'>
+            <h5>Figure 4: Timeline</h4>
+            <p>Below the map is a timeline spanning the years the specimens were collected; 1859-2017. The height of the bar in the timeline represents the amount of specimens collected that year (the taller the bar, the more specimens collected that year). When the mouse is moved over a bar, a tooltip appears showing that bar’s year and the amount of specimens collected during that year. For years when no specimens were collected, they were colored gray. </p>
+            <img style="width:90%;height:100px;" src='./img/project2_vis3.png'>
+            <h5>Figure 5: Map Adjusted by Timeline</h5>
+            <p>
+                If a user wants to focus on a specific time frame, they can draw a box over the section of the timeline containing those years, and all of the charts and map on the page will adjust accordingly (Figure 4). The current date range can be seen in the title of the page. In the screenshot below, the years 1930-1956 were selected (Figure 5). After a selection is made, the box can be adjusted to change the time frame.            
+            </p>
+            <img style="width:90%;height:400px;" src='./img/project2_vis4.png'>
+            <h5>Figure 6: Total Samples By Month</h5>
+            <p></p>
+            <img style="width:90%;height:400px;" src='./img/project2_vis5.png'>
+            <h5>Figure 7: Total Samples per Type</h5>
+            <p></p>
+            <img style="width:90%;height:400px;" src='./img/project2_vis6.png'>
+            <h5>Figure 8: Total Collections per Collector</h5>
+            <p>
+                Below the timeline are three bar charts shown in Figures 6-8. The first represents the total number of samples collected per month, the second represents the total number of samples collected per fungi type, and the third represents the total number of samples collected by each collector. Each of these charts has a tooltip similar to the timeline, where when the mouse is over a bar it will show what that bar represents and the data value associated with it. Similarly to the map, whenever a time period selection is made on the timeline, the 3 bar charts update to reflect their data over the selected time period.
+            </p>
+            <img style="width:90%;height:400px;" src='./img/project2_vis7.png'>
+            <h5>Figure 9: Pie Charts</h5>
+            <p>
+                Finally, at the bottom of the page are two pie charts representing specimens with/without GPS coordinates, and specimens with/without event dates. Each wedge of the pie chart also has a tooltip which shows what that wedge represents and the number of specimens in that wedge out of the total number of specimens. Like all other visualizations, the pie charts update to reflect their data over the selected time period.
+            </p>
+        </div>
+        <h4>Design Sketched/Justifications</h4>
+        <div class="center">
+            <img style="width:90%;height:400px;" src='./img/project2_vis8.png'>
+            <h5>Figure 10: C Goals Final Sketch Draft</h5>
+            <p>
+                Initially, our group came up with the idea together to create the visualization above. We were to have a gradient as our timeline and display the charts and graphs below in a row. While we didn't use the gradient for the timeline (due to lack of readability), we did end up using a gradient for the colored dots timeline with a similar design, though. Because the map was provided to us with a leaflet, the amount of design that went into the map was minimal, though map components will be discussed.
+            </p>
+            <img style="width:90%;height:400px;" src='./img/project2_vis9.png'>
+            <h5>Figure 11: New Timeline Sketch</h5>
+            <p></p>
+            <img style="width:90%;height:400px;" src='./img/project2_vis10.png'>
+            <h5>Figure 12: New Timeline Implementation</h5>
+            <p>
+                After we realized our gradient timeline was not going to work due to lack of precise readability, we decided to implement a sketch we had made (Figure 11) as an alternative to the gradient (proof that sketching multiple ideas for the same goal at once can be useful). The size of the bars change based on the amount of fungi collections in that year. The final result can be seen in Figure 12. Initially we did not have gray boxes indicating years with 0 collections. That idea came to us in a discussion because we felt we were not accurately representing the data. After further considering the non-zero bar color, we decided that the colors were too jarring to look at together. We took into account that the only requirement was that bars be distinguished from one another and implemented the color change seen in Figure 4. This choice, while not technically desaturated green, simulates an alternating desaturated green.
+            </p>
+            <lb></lb>
+            <p>
+                Before we could decide how to color the dots on the map, we had to determine the type of data. Year and days into year are quantitative, while phylum is categorical. We then decided that the year and days into year color scheme should be a diverging gradient, because it needs to highlight a significant amount of differences between points (years/days). The phylum color scheme we went with was simple colors in a categorical scheme. We decided to make data points with no phylum be colored in black for “unknown”. An idea for the future was that to show multiple data points on top of each other we could make the circle bigger and increase the saturation of the color to highlight the distinction.
+            </p>
+            <img style="width:90%;height:600px;" src='./img/project2_vis11.png'>
+            <h5>Figure 13: Brushing Comic</h5>
+            <p>
+                In the above Figure we illustrate our ideal brushing interaction. In this comic the user can click, drag, and let go to update the map’s data points to use the selected time frame (from year x to year y). In order to handle this event we needed to think about how to implement our charts to handle filtering by year. Since most charts are unique in the way they handle their scales and axes, we decided to just make a function in main.js that will call each individual chart/map’s own “updateByYears” function, passing the lower year and higher year from the selection. An issue we ran into was we couldn’t figure out how to get out of “brush mode”. At the time of submission the only way to return to the “pointer” cursor (when hovering over the timeline) is to refresh the page. We almost completely implemented our ideal brushing design.
+            </p>
+            <lb></lb>
+            <p>
+                Finally, we made one more significant design decision. We initially implemented the Samples With/Without GPS Coordinates and Samples With/Without Event Dates charts as bar charts, but then realized both charts were very 1-sided. We considered our options for expressing this kind of data and decided a pie chart was a more appealing way to visualize this kind of data than two one-sided bar charts( Figure 7).
+            </p>
+            <lb></lb>
+            <p>
+                If we had more time the first thing we would do is condense our graphs into a smaller view to have the user avoid scrolling up to adjust the timeline.
+            </p>
+        </div>
+
+        <h4>Discoveries</h4>
+        <p>
+            The application allows for comparison between the various fungi in the UC Herbarium’s collection that would otherwise be very challenging to do. The data set is very large and diverse, with fungi being collected over a period of 158 years, from all over the world, in 8 different categories of fungi, and from 10 different collectors. Trying to read through each fungi one by one and make comparisons would be nearly impossible. This application displays various interactive comparisons and visualizations to make analyzing all of this data possible and straight forward.
+        </p>
+        <lb></lb>
+        <p>
+            One discovery we made from analyzing the data with our application is that most of the specimens collected were taken from the United States or from Europe. Each specimen is represented by a dot on a map, and while there are dots all over the world, the largest clusters are in these two areas. We have no way of knowing why this is, but it is interesting that the collectors all seemed to concentrate on these parts of the world. 
+        </p>
+        <lb></lb>
+        <p>
+            Another discovery that can be made by looking at the timeline is that the bulk of the specimens were collected between 1930-1950. Again we have no way of knowing why this is, but it is possible that this is when the Herbarium had the most funding, or had the most scientists working for them. But it is a vast difference during this time period than any other point in time.
+        </p>
+        <lb></lb>b
+        <p>
+            Finally, it can be noted that most of the fungi are of the type Basidiomycota by far. 5262 of the specimens are of this type, while there are only 1658 specimens of the second most common type collected, Ascomycota. Most of the fungi types have less than 50 specimens in the collection. Myxomycota, with 400 specimens in the collection, is the only other type with more than 50. 
+        </p>
+
+        <h4>Process</h4> 
+        <p>
+            Much like the Dirty Air project, this project visualizing the fungi collection of UC’s Herbarium is written almost entirely in JavaScript using the D3.js library for visualizing the data via the creation of charts and interaction between charts. Additionally for this project the Leaflet.js library was used to implement the map so the user could better visualize where in the world a sample was collected. 
+        </p>
+        <lb></lb>
+        <p>
+            The previous project acted as a starting point and reference for many aspects of the project as our team referred back to it and the example provided in class for guidance on implementing our ideas. The first step in this project was to preprocess the data. This ensured JS and D3 would not throw extraneous errors and that the team would know what to expect when working with the data. The graphs created on the page are all separate instances of unique classes which contain the unique process for generating the data necessary for display. All graphs inhabit their own SVG except for the two pie charts which share an SVG due to their similarities.
+        </p>
+        <div class="center">
+            <img style="width:90%;height:150px;" src='./img/project2_vis12.png'>
+            <h5>Figure 14: Git Branch Chart</h5>
+        </div>
+        <p>
+            With this project being quite interactive it was important to be careful and thoughtful when creating each graph so it may be updated in a simple and seamless way. By doing this we were able to have each graph respond to user input such as changing the year range. The graphs will all update to display the newly selected data and redraw their axes in the case of the barcharts so the data is correctly represented and easy to read.
+        </p>
+        <lb></lb>
+        <p>
+            Tooltip implementation proved to be a challenge in some parts of the application and simple in others. They are made using SVGs just as the graphs and are populated with the same types of data as the graphs. On the map for instance the tooltip has been customized to persist when a user hovers their mouse pointer on it so the user can interact with the link provided to the sample’s web page hosted by the herbarium.
+        </p>
+        <h4>Team Division</h4>
+        <h5>Gabe Rapaport:</h5>
+        <p>
+            Visual: Color and formatting for all
+	Barchart: Fixed formatting
+	Data: Preprocessed data with python for all visualizations. 
+        </p>
+        <h5>
+            Nathaniel Alter:
+        </h5>
+        <p>
+            Timeline: data processing, drawing and formatting the timeline, and tooltips
+	Barcharts: helped convert two barcharts to pie charts, added tooltips
+Map: helped update map data when timeframe was changed
+Formatting: helped with overall page formatting, positioning of axis/axis titles/visuals, and added current selected time frame to page title 	
+
+        </p>
+        <h5>Steven Hagedorn: </h5>
+        <p>
+            Map: applied date filtering
+            Barcharts: created four barcharts, helped convert two barcharts to pie charts
+            Formatting: finalized formatting with team 
+            Source control: (tried) to manage source control
+        </p>
+        <h5>
+            Jakob Wardeaga: 
+        </h5>
+        <p>
+            Map: initial implementation, dot coloring, dot legends, background changing, tooltip interaction, dot re-sizing 
+        </p>
+
     </div>
 
 <div class="rounded" id="bglightpurple">
     <p>Project 3</p>
+    
 </div>
+
 </body>
 
 </html>
